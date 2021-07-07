@@ -28,15 +28,21 @@ DEVICE_PATH := device/motorola/guamp
 
 -include device/motorola/sm6115-common/BoardConfigCommon.mk
 
-BOARD_KERNEL_SEPARATED_DTBO := true
+# BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 BOARD_KERNEL_IMAGE_NAME := Image.gz
-TARGET_KERNEL_SOURCE := kernel/motorola/sm6115-common
-TARGET_KERNEL_CONFIG := vendor/guamp_defconfig
+# TARGET_KERNEL_SOURCE := kernel/motorola/sm6115-common
+# TARGET_KERNEL_CONFIG := vendor/guamp_defconfig
 
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := r328903
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
+
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+
+# TARGET_KERNEL_CLANG_COMPILE := true
+# TARGET_KERNEL_CLANG_VERSION := r328903
 
 # Props
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop

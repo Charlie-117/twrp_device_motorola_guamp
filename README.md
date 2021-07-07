@@ -29,6 +29,11 @@ lunch omni_guamp-eng
 make -jX recoveryimage
 ```
 
+### Kernel source
+
+Prebuilt
+
+
 ### Copyright
  ```
   /*
