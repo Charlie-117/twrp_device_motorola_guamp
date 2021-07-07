@@ -57,3 +57,19 @@ BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 4881645568
 
 # Props
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
+# SHRP Flags
+SHRP_DEVICE_CODE := guamp
+SHRP_PATH := device/motorola/guamp
+SHRP_MAINTAINER := Tony
+SHRP_REC_TYPE := SAR
+SHRP_DEVICE_TYPE := A/B
+SHRP_REC := /dev/block/bootdevice/by-name/recovery
+SHRP_EDL_MODE := 1
+SHRP_INTERNAL := /sdcard
+SHRP_EXTERNAL := /external_sd
+SHRP_OTG := /usb_otg
+SHRP_AB := true
+SHRP_NOTCH := true
+SHRP_EXPRESS := true
+SHRP_DARK := true
